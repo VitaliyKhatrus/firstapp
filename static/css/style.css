@@ -1,0 +1,16 @@
+div.wrapper {
+width:160px;
+}
+div.left_block {
+float:left;
+width:80px;
+}
+div.right_block {
+float:right;
+width:80px;
+}
+p.username{
+	color: #ff9900;
+	font-weight: bold;
+	font-style: italic; 
+}

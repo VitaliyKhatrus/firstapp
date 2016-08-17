@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block article %}
+	<h6>Дата публикации: {{ article.article_date }}</h6>
+	<h2>{{ article.article_title }}</h2>
+	<p>{{ article.article_text | safe }}</p>
+	<hr>
+<div class="large-offset-1 large-8 columns">
+{% if comments %}	
+	<p>Комментарии:</p>
+{% for comment in comments %}
+	
+	<div class="panel">
+		<p class="username">{{ comment.comments_username}}:</p>
+		<p>{{ comment.comments_text }}</p>
+	</div>
+{% endfor %}
+{% endif %}
+	
+	
+{% if username %}
+
+	<!--div>Привет {{ username }} </div>
+	<br /-->
+	<form action="/blog/articles/addcomment/{{ article.id }}/" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<!--input type="hidden" name="profile_id" value="{{ profile.id }}" /-->
+		<input type="submit" class="button" value="Добавить комментарий">
+
+		
+	</form>
+
+{% else %}
+	
+	<h6 class="subheader">Комментарии могут оставлять только зарегестрированные пользователи</h6>
+	
+{% endif %}
+</div>
+
+{% endblock %}
