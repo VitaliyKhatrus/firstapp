@@ -2,3 +2,4 @@
 *.egg-info
 *.mo
 *.egg
+.git.old
