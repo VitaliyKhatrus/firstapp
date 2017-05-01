@@ -42,6 +42,7 @@ TEMPLATE_DIRS = (
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,7 +53,13 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'article',
     'loginsys',
+    'disqus',
 )
+
+DISQUS_API_KEY = 'RUx7Awd5TNn5ysXf4u82XQns03oYoSBNqRKhaDtDLVCHRRJOjDkUcvGMVrrIeHNu'
+DISQUS_WEBSITE_SHORTNAME = 'blog-cvflpgdpdw'
+
+GRAPPELLI_ADMIN_TITLE = 'My BLOG'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

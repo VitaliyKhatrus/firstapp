@@ -22,6 +22,7 @@ from firstapp import settings
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     ###url(r'^basicview/', include('article.urls')),

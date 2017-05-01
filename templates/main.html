@@ -9,19 +9,19 @@
 </head>
 <body>
 
-    <div class="top-bar">
+    <!--div class="top-bar">
         <section class="top-bar-section">
            <ul class="right">
-              {% if username %}
+              {# {% if username %} #}
                   <li><a href="/auth/logout/">Выйти ({{ username }})</a></li>
-               {% else %}
+               {# {% else %} #}
                   <li><a href="/auth/login/">Войти</a></li>
-                {% endif %}
+                {# {% endif %} #}
            	
            </ul>
         	
         </section>
-     </div>
+     </div-->
 
     <div class="row">
         <div class="large-12 columns">
@@ -29,16 +29,30 @@
 	<hr/>
 	</div>
 	</div>
-	
-<div class="row">
 
+<div class="row">
+<div class="small-3 columns">
+<div class="ll_art">
+    <p class="l_art">Список статей</p>
+    {% for article in all_articles %}
+    <h6 class='list_art'><a href="/blog/articles/get/{{ article.id }}/">{{ article.article_title }}</a></h6>
+    {% endfor %}
+  </div>
+  </div>
+
+
+<div class="small-9 columns">
 {% block login %}{% endblock %}
 {% block article %}{% endblock %}
 
-
 </div>
+  </div>
+
+
 
 
 </body>
 </html>
+
+
 

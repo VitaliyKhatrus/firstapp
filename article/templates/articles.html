@@ -3,7 +3,7 @@
 
 <!--div class="row"-->         
  {% block article %}
- <div class="large-8 columns">
+ <div class="large-12 columns">
      {% for article in articles %}
      <h6>Дата публикации {{ article.article_date }}</h6>
      <h4>
@@ -33,6 +33,7 @@
  <div class="row">
      <!--div class="large-3 large-offset-5 columns"-->
      <div class="large-8 large-offset-5 columns">
+
          <ul class="pagination">
              {% if articles.has_previous %}
              <li class="arrow">

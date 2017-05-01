@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+
 
 # Create your models here.
 
 SHORT_TEXT_LEN = 250
 
+
 class Article(models.Model):
     class Meta():
-        ordering = ('-article_date',) # sorting by date
-        db_table = "article" #table`s name
-
+        ordering = ('-article_date',)  # sorting by date
+        db_table = "article"  # table`s name
 
     article_title = models.CharField(max_length = 200)
-    #article_text = models.TextField()
+    # article_text = models.TextField()
     article_text = RichTextUploadingField(blank=True, default='')
     article_date = models.DateTimeField()
     article_likes = models.IntegerField(default = 0)
@@ -38,5 +39,7 @@ class Comments(models.Model):
     comments_article = models.ForeignKey(Article)
     #comments_username = models.ManyToManyField(User)
     comments_username = models.CharField(max_length = 100, default = None)
+
+
 
 

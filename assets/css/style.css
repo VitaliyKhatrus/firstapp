@@ -12,5 +12,19 @@ width:80px;
 p.username{
 	color: #ff9900;
 	font-weight: bold;
-	font-style: italic; 
+	font-style: italic;
+}
+
+p.l_art{
+	
+	font-weight: bold;
+	text-decoration: underline;	
+}
+h6.list_art{
+	font-size: 12px;
+	line-height: 0.9;
+
+}
+div.ll_art{
+	position: fixed;
 }
