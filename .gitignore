@@ -3,4 +3,6 @@
 *.mo
 *.egg
 .git.old
+.idea
+.gitignore
 Guardfile
