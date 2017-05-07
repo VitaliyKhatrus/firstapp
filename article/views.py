@@ -71,15 +71,17 @@ def articles(request, page_number=1):
 ###def articles(request, pg=1):
     # current_user = request.user
     # print current_user.id
-
-    all_articles = Article.objects.all()
-    current_page = Paginator(all_articles, 2)
-    context = {
-               'articles': current_page.page(page_number),
-               'username': auth.get_user(request).username,
-               'all_articles': all_articles
-               }
-    return render_to_response('articles.html', context)
+    try:
+        all_articles = Article.objects.all()
+        current_page = Paginator(all_articles, 2)
+        context = {
+                   'articles': current_page.page(page_number),
+                   'username': auth.get_user(request).username,
+                   'all_articles': all_articles
+                   }
+        return render_to_response('articles.html', context)
+    except EmptyPage:
+        return render(request, 'error.html')
 
 
 
